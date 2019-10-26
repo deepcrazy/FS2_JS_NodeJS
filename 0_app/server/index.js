@@ -1,5 +1,3 @@
-// d = new Date();
-// document.getElementById("demo").innerHTML = d;
 try {
     const http = require("http");   // Require the HTTP module for basic server functionality
     const hostname = 'localhost';   // Set the hostname, can also be an address (e.g. 127.0.0.1)
@@ -20,5 +18,5 @@ try {
         console.log('http://'+ hostname + ':' + port + '    ok');
     });
 } catch (error) {
-    console.log("Error occured: " + error);
+    console.log("Error occured: " + error);     //  Error handling
 }
