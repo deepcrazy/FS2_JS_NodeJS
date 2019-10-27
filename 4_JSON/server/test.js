@@ -5,7 +5,8 @@ try {
     const url = require('url');
     const fs = require('fs');
 
-    dataArrayObj = { firstName: 'Deepanshu', lastName: 'Gupta', email: 'dg1.031292@gmail.com', address: 'MacDougall Drive, Brampton, ON', phone: '6476157865', verified: 'yes' };
+    //  Array of data that contains 6 key-value pairs.
+    dataArrayObj = { firstName: 'Deepanshu', lastName: 'Gupta', email: 'dg1.silent@gmail.com', address: 'MacDougall Drive, Brampton, ON', phone: '6476156767', verified: 'yes' };
 
     const server = http.createServer((req, res) => {
         var queryData = url.parse(req.url, true).query;   //  parse the URL data
@@ -18,6 +19,7 @@ try {
         Object.keys(queryData).forEach(element => {
             returnValue[element] =  dataArrayObj[element];
 
+            //  If key from query url doesn't match
             if (returnValue[element] === undefined){             
                 wrongKeyMsg = element + " is not a valid key. Please enter a valid key in query data..!!";
                 res.write(wrongKeyMsg);
@@ -37,5 +39,5 @@ try {
     });
 
 } catch (error) {
-    console.log("Error occured: " + error);
+    console.log("Error occured: " + error);     //  Error handling
 }
